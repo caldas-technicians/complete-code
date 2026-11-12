@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeLANS · Aprende HTML y JavaScript</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">&lt;/&gt;</span>
+      <span>CodeLANS</span>
+      <small>HTML + JavaScript</small>
+    </div>
+    <div class="progress" title="Progreso del curso">
+      <div class="progress-bar"><span id="progressFill"></span></div>
+      <span id="progressText">0/0</span>
+    </div>
+    <div class="top-actions">
+      <button id="btnDownload" class="ghost">⬇ Descargar mi código</button>
+      <button id="btnReset" class="ghost danger">Reiniciar curso</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="levels" id="levelMap" aria-label="Mapa de niveles"></aside>
+
+    <main class="workspace">
+      <section class="lesson">
+        <div class="lesson-head">
+          <span class="badge" id="lvBadge"></span>
+          <h1 id="lvTitle"></h1>
+        </div>
+        <div class="concept" id="lvConcept"></div>
+        <div class="goal"><strong>🎯 Objetivo:</strong> <span id="lvGoal"></span></div>
+        <div class="hint-box hidden" id="hintBox"></div>
+      </section>
+
+      <section class="editor">
+        <div class="editor-head">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="filename">index.html</span>
+          <span class="legend">
+            <span class="lg-new">código nuevo</span>
+            <span class="lg-old">ya construido</span>
+          </span>
+        </div>
+        <div class="code" id="code"></div>
+        <div class="editor-actions">
+          <button id="btnCheck" class="primary">✔ Comprobar <kbd>Ctrl+Enter</kbd></button>
+          <button id="btnHint">💡 Pista</button>
+          <button id="btnSolve">👁 Ver solución</button>
+          <button id="btnClear" class="ghost">Limpiar</button>
+          <span id="feedback" class="feedback" role="status"></span>
+        </div>
+        <p class="tip">Escribe en los espacios resaltados. Aparecerán sugerencias: usa <kbd>↑</kbd><kbd>↓</kbd> y
+          <kbd>Tab</kbd> para autocompletar, o <kbd>Ctrl+Espacio</kbd> para ver opciones.</p>
+      </section>
+    </main>
+
+    <aside class="output">
+      <div class="panel preview">
+        <div class="panel-head">
+          <span>👀 Vista previa</span>
+          <button id="btnRun" class="ghost small" title="Volver a ejecutar">↻ Ejecutar</button>
+        </div>
+        <iframe id="preview" title="Vista previa"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+      </div>
+      <div class="panel console">
+        <div class="panel-head">
+          <span>🖥 Consola</span>
+          <button id="btnClearConsole" class="ghost small">Limpiar</button>
+        </div>
+        <div class="console-out" id="consoleOut"></div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="modal hidden" id="modal" role="dialog" aria-modal="true">
+    <div class="modal-card" id="modalCard"></div>
+  </div>
+
+  <div class="ac hidden" id="ac" role="listbox"></div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
